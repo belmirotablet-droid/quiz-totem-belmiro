@@ -140,3 +140,75 @@ li { padding: 6px 0; border-bottom: 1px solid #edf1f5; }
   .card { padding: 26px; }
   .topbar { flex-direction: column; gap: 16px; }
 }
+/* ===== RANKING DA TELA INICIAL ===== */
+
+.ranking-home{
+  margin-top:40px;
+  background:#f7f9fc;
+  padding:25px;
+  border-radius:20px;
+}
+
+.ranking-home h2{
+  margin-top:0;
+  color:var(--azul);
+}
+
+.ranking-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 18px;
+  margin-bottom:10px;
+  background:white;
+  border-radius:14px;
+  box-shadow:0 2px 6px rgba(0,0,0,.05);
+}
+
+.ranking-item.top1{
+  background:#fff8d6;
+  border-left:8px solid #FFD700;
+}
+
+.ranking-item.top2{
+  background:#f2f2f2;
+  border-left:8px solid #C0C0C0;
+}
+
+.ranking-item.top3{
+  background:#ffe7d6;
+  border-left:8px solid #CD7F32;
+}
+
+.medalha{
+  width:60px;
+  font-size:30px;
+  font-weight:bold;
+  text-align:center;
+}
+
+.nome-ranking{
+  flex:1;
+  font-size:20px;
+  font-weight:bold;
+}
+
+.pontos-ranking{
+  font-size:20px;
+  font-weight:bold;
+  color:var(--azul);
+}
+
+/* ===== POSIÇÃO FINAL ===== */
+
+.posicao-ranking{
+  margin:25px 0;
+  padding:20px;
+  border-radius:18px;
+  background:#e9f2ff;
+  border:2px solid #bfd7ff;
+  text-align:center;
+  font-size:24px;
+  font-weight:bold;
+  color:var(--azul);
+}
