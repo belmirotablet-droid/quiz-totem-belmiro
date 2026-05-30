@@ -212,3 +212,22 @@ li { padding: 6px 0; border-bottom: 1px solid #edf1f5; }
   font-weight:bold;
   color:var(--azul);
 }
+.nome-ranking{
+  flex:1;
+  font-size:20px;
+  font-weight:bold;
+}
+
+.nome-ranking small{
+  display:block;
+  margin-top:4px;
+  color:#666;
+  font-size:16px;
+  font-weight:normal;
+}
+
+.pontos-ranking{
+  font-size:20px;
+  font-weight:bold;
+  color:var(--azul);
+}
