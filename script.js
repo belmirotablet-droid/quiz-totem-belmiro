@@ -201,8 +201,19 @@ function renderRanking(id, lista) {
 
   lista.forEach((item, i) => {
     const medalha = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : `${i + 1}.`;
-    const li = document.createElement("li");
-    li.textContent = `${medalha} ${item.nome} (${item.turma}) — ${item.pontuacao} pts — ${item.acertos}/${item.total} — ${formatarTempo(Number(item.tempoSegundos))}`;
+const li = document.createElement("li");
+
+li.innerHTML = `
+<strong>${medalha} ${item.nome}</strong>
+<br>
+🏫 Turma: ${item.turma}
+<br>
+🏆 ${item.pontuacao} pts
+<br>
+✅ ${item.acertos}/${item.total}
+<br>
+⏱ ${formatarTempo(Number(item.tempoSegundos))}
+`;
     ol.appendChild(li);
   });
 }
