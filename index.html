@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz do Conhecimento - Totem Belmiro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section id="tela-inicio" class="card tela ativa">
+      <div class="badge">EEEFM Belmiro Teixeira Pimenta</div>
+      <h1>Quiz do Conhecimento</h1>
+      <p class="subtitulo">Responda 12 questões, uma de cada disciplina. A pontuação considera acertos e tempo.</p>
+
+      <div class="form-grid">
+        <label>
+          Nome completo
+          <input id="nome" type="text" placeholder="Digite seu nome completo" autocomplete="off" />
+        </label>
+
+        <label>
+          Turma
+          <select id="turma">
+            <option value="">Selecione sua turma</option>
+            <option>1º A</option><option>1º B</option><option>1º C</option><option>1º D</option>
+            <option>2º A</option><option>2º B</option><option>2º C</option><option>2º D</option>
+            <option>3º A</option><option>3º B</option><option>3º C</option><option>3º D</option>
+          </select>
+        </label>
+      </div>
+
+      <button class="btn principal" onclick="iniciarQuiz()">Iniciar Quiz</button>
+      <p class="aviso">Tempo máximo sugerido: 5 minutos.</p>
+    </section>
+
+    <section id="tela-quiz" class="tela">
+      <header class="topbar">
+        <div>
+          <strong>Quiz do Conhecimento</strong>
+          <span id="progresso">Questão 1 de 12</span>
+        </div>
+        <div class="timer" id="cronometro">05:00</div>
+      </header>
+
+      <div class="card pergunta-card">
+        <div id="disciplina" class="disciplina"></div>
+        <h2 id="pergunta"></h2>
+        <div id="alternativas" class="alternativas"></div>
+        <button class="btn principal" onclick="proximaQuestao()">Responder e continuar</button>
+      </div>
+    </section>
+
+    <section id="tela-resultado" class="card tela">
+      <h1>Resultado final</h1>
+      <div class="resultado-grid">
+        <div><span id="res-acertos">0/12</span><small>Acertos</small></div>
+        <div><span id="res-tempo">0s</span><small>Tempo</small></div>
+        <div><span id="res-pontos">0</span><small>Pontuação</small></div>
+      </div>
+
+      <p id="mensagem-final" class="mensagem"></p>
+
+      <div class="ranking-area">
+        <h2>Ranking da semana</h2>
+        <ol id="ranking-semana"></ol>
+      </div>
+
+      <div class="ranking-area">
+        <h2>Ranking da sua turma na semana</h2>
+        <ol id="ranking-turma"></ol>
+      </div>
+
+      <button class="btn secundaria" onclick="reiniciar()">Voltar ao início</button>
+    </section>
+  </main>
+
+  <script src="questoes.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
