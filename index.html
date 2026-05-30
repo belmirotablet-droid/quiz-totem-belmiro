@@ -30,8 +30,17 @@
         </label>
       </div>
 
-      <button class="btn principal" onclick="iniciarQuiz()">Iniciar Quiz</button>
-      <p class="aviso">Tempo máximo sugerido: 5 minutos.</p>
+<button class="btn principal" onclick="iniciarQuiz()">Iniciar Quiz</button>
+
+<p class="aviso">Tempo máximo sugerido: 5 minutos.</p>
+
+<div class="ranking-home">
+  <h2>🏆 Top 10 da Semana</h2>
+
+  <div id="rankingInicial">
+    Carregando ranking...
+  </div>
+</div>
     </section>
 
     <section id="tela-quiz" class="tela">
@@ -59,7 +68,9 @@
         <div><span id="res-pontos">0</span><small>Pontuação</small></div>
       </div>
 
-      <p id="mensagem-final" class="mensagem"></p>
+<p id="mensagem-final" class="mensagem"></p>
+
+<div id="posicao-ranking" class="posicao-ranking"></div>
 
       <div class="ranking-area">
         <h2>Ranking da semana</h2>
