@@ -212,10 +212,76 @@ function formatarTempo(segundos) {
   const seg = segundos % 60;
   return `${String(min).padStart(2, "0")}:${String(seg).padStart(2, "0")}`;
 }
+async function carregarRankingInicial() {
 
+  try {
+
+    const resposta = await fetch(URL_SCRIPT);
+    const dados = await resposta.json();
+
+    const ranking = (dados.rankingSemana || []).slice(0,10);
+
+    let html = "";
+
+    ranking.forEach((aluno,index)=>{
+
+      let medalha="";
+      let classe="";
+
+      if(index===0){
+        medalha="🥇";
+        classe="top1";
+      }
+      else if(index===1){
+        medalha="🥈";
+        classe="top2";
+      }
+      else if(index===2){
+        medalha="🥉";
+        classe="top3";
+      }
+
+      html += `
+      <div class="ranking-item ${classe}">
+
+        <div class="medalha">
+          ${medalha || (index+1)+"º"}
+        </div>
+
+        <div class="nome-ranking">
+          ${aluno.nome}
+          <small>${aluno.turma}</small>
+        </div>
+
+        <div class="pontos-ranking">
+          ${aluno.pontuacao} pts
+        </div>
+
+      </div>
+      `;
+
+    });
+
+    document.getElementById("rankingInicial").innerHTML = html;
+
+  }
+  catch(error){
+
+    console.error(error);
+
+    document.getElementById("rankingInicial").innerHTML =
+      "Não foi possível carregar o ranking.";
+
+  }
+}
 function reiniciar() {
   document.getElementById("nome").value = "";
   document.getElementById("turma").value = "";
   document.getElementById("cronometro").classList.remove("alerta");
   mostrarTela("tela-inicio");
 }
+window.onload = () => {
+
+  carregarRankingInicial();
+
+};
